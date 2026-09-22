@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    </head>
+    <body>
+        <h1>Registro de Clientes</h1>
+        
+        <p th:if="${error}" th:text="${error}"></p>
+        
+        <form th:action="@{/clientes/guardar}" th:object="${cliente}" method="post">
+            <input type="hidden" th:field="*{idCliente}">
+            <label>Nit:</label>
+            <input type="text" class="form-control" th:field="*{nit}">
+            <label>Nombre:</label>
+            <input type="text" class="form-control" th:field="*{nombre}">
+            <label>Apellidos:</label>
+            <input type="text" class="form-control" th:field="*{apellidos}">
+            <label>Email:</label>
+            <input type="text" class="form-control" th:field="*{email}">
+            <button class="btn btn-dark" type="submit"> Guardar</button>          
+        </form>
+        
+        <table class="table table-dark table-striped-columns">
+            <tr>
+                <th>ID</th>
+                <th>NIT</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Email</th>
+                <th>Acciones</th>
+            </tr>     
+            <tr th:each="c : ${clientes}">
+                <td th:text="${c.idCliente}"></td>
+                <td th:text="${c.nit}"></td>
+                <td th:text="${c.nombre}"></td>
+                <td th:text="${c.apellidos}"></td>
+                <td th:text="${c.email}"></td>
+                <td>
+                    <a class="btn btn-success" th:href="@{/clientes/editar/{idCliente}(idCliente=${c.idCliente})}">Editar</a>
+                    <form th:action="@{/clientes/eliminar/{idCliente}(idCliente=${c.idCliente})}" method="post">
+                     <button class="btn btn-danger" type="submit"> Eliminar</button>
+                </td>
+            </tr>
+        </table>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    </body>
+</html>

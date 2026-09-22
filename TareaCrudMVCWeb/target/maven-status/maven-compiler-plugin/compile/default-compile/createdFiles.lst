@@ -1,0 +1,15 @@
+com\mycompany\tareacrudmvcweb\modelo\Factura.class
+com\mycompany\tareacrudmvcweb\dao\EmpleadoDAO.class
+com\mycompany\tareacrudmvcweb\dao\ClienteDAO.class
+com\mycompany\tareacrudmvcweb\modelo\DetalleFactura.class
+com\mycompany\tareacrudmvcweb\controlador\clienteControlador.class
+com\mycompany\tareacrudmvcweb\modelo\Cliente.class
+com\mycompany\tareacrudmvcweb\modelo\Marca.class
+com\mycompany\tareacrudmvcweb\modelo\Persona.class
+com\mycompany\tareacrudmvcweb\modelo\Puesto.class
+com\mycompany\tareacrudmvcweb\config\ConexionDB.class
+com\mycompany\tareacrudmvcweb\modelo\Empleado.class
+com\mycompany\tareacrudmvcweb\dao\PuestoDAO.class
+com\mycompany\tareacrudmvcweb\TareaCrudMVCWeb.class
+com\mycompany\tareacrudmvcweb\dao\CrudDAO.class
+com\mycompany\tareacrudmvcweb\modelo\Producto.class
